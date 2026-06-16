@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-label="Niu Niu Bull Bull Hand Ranking Guide">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.55" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="760" fill="url(#bg)"/>
+  <rect x="72" y="70" width="1256" height="620" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.28)" stroke-width="3"/>
+  <text x="110" y="160" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Niu Niu Bull Bull Hand Ranking Guide</text>
+  <text x="110" y="220" fill="#dbeafe" font-family="Arial, Helvetica, sans-serif" font-size="34">牛牛牌型与倍数模式指南</text>
+  <g transform="translate(130,285)">
+    <rect x="0" y="0" width="210" height="290" rx="18" fill="#ffffff"/>
+    <text x="34" y="86" fill="#7c3aed" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">A</text>
+    <text x="78" y="178" fill="#7c3aed" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700">♠</text>
+  </g>
+  <g transform="translate(375,285)">
+    <rect x="0" y="0" width="210" height="290" rx="18" fill="#ffffff"/>
+    <text x="34" y="86" fill="#dc2626" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">K</text>
+    <text x="78" y="178" fill="#dc2626" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700">♥</text>
+  </g>
+  <text x="680" y="350" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">NIU NIU / BULL BULL</text>
+  <text x="680" y="410" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="28">Bilingual rules, table checks and responsible notes</text>
+  <text x="680" y="465" fill="#fef3c7" font-family="Arial, Helvetica, sans-serif" font-size="26">18+ information only • No guaranteed wins</text>
+  <text x="110" y="645" fill="#e0f2fe" font-family="Arial, Helvetica, sans-serif" font-size="28">myanmarcasino.cloud</text>
+</svg>
