@@ -11,6 +11,28 @@ SITE_URL = "https://myanmarcasino.cloud/"
 TL_SITE_URL = "https://tl8899.live/"
 TL_BLOG_URL = "https://tl8899.live/blog/"
 TL_CONTACT_URL = "https://tl8899.live/contact/"
+TL_PLAY_URL = "https://tl616.cc/"
+
+SITE_PROFILES = (
+    {
+        "name": "TL8899 LIVE 中文资讯",
+        "keyword": "TL8899 LIVE",
+        "url": TL_SITE_URL,
+        "description_zh": "中文真人娱乐资讯与每日文章入口，适合先阅读玩法、风险与负责任娱乐说明。",
+    },
+    {
+        "name": "TL616 平台页面",
+        "keyword": "TL616",
+        "url": TL_PLAY_URL,
+        "description_zh": "平台页面与入口信息；使用前应自行核对域名、当前规则、地区限制及账户安全信息。",
+    },
+    {
+        "name": "Myanmar Casino Guide",
+        "keyword": "Myanmar Casino Guide",
+        "url": SITE_URL,
+        "description_zh": "中英双语规则资料库，包含百家乐、龙虎、牛牛、骰宝及二十一点等基础说明。",
+    },
+)
 
 GAMES = (
     {
@@ -189,12 +211,15 @@ def render_post(
 ) -> str:
     image_url = f"https://raw.githubusercontent.com/{repository}/main/assets/{game['image']}"
     guide_url = f"{SITE_URL}{game['guide']}"
+    featured_site = SITE_PROFILES[(day.toordinal() + sequence - 1) % len(SITE_PROFILES)]
     title = f"腾龙公司：{game['zh']}｜{angle['zh_title']}（第{sequence}篇）"
     description = (
         f"{game['zh']}中文指南：{angle['zh_title']}，包含基础规则、桌台检查、新手误区与负责任娱乐提醒。"
     )
     table_rows = "\n".join(f"| {label} | {detail} |" for label, detail in RULE_TABLES[game["slug"]])
-    keywords = "、".join(("腾龙公司", "TL8899 LIVE", game["zh"], "真人娱乐", "规则指南", "负责任娱乐"))
+    keywords = "、".join(
+        ("腾龙公司", featured_site["keyword"], game["zh"], "真人娱乐", "规则指南", "负责任娱乐")
+    )
     return f"""<!--
 title: {title}
 description: {description}
@@ -231,6 +256,10 @@ language: zh-CN
 
 {angle['focus_zh']}
 
+## 站点导航：{featured_site['name']}
+
+{featured_site['description_zh']} 本篇推荐从 [{featured_site['name']}]({featured_site['url']}) 查看相关页面。外部页面内容、规则与可用性可能更新，请以访问时显示的信息为准。
+
 ### 新手检查清单
 
 - 先打开桌台信息，确认赔率、限额及特别规则。
@@ -250,10 +279,12 @@ language: zh-CN
 
 ## 相关页面
 
-- [TL8899 LIVE 中文文章]({TL_BLOG_URL})
-- [腾龙公司首页]({TL_SITE_URL})
+- [TL8899 LIVE 中文资讯与每日文章]({TL_BLOG_URL})
+- [TL616 页面入口与信息核对]({TL_PLAY_URL})
+- [Myanmar Casino Guide 中英双语规则资料]({SITE_URL})
 - [联系方式]({TL_CONTACT_URL})
-- [Myanmar Casino Guide 规则资料]({SITE_URL})
+
+以上链接分别用于中文资讯、平台页面与双语规则参考，不代表保证结果或规避风险；访问前请确认域名、规则与个人预算限制。
 
 ---
 
