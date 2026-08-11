@@ -8,6 +8,9 @@ from pathlib import Path
 
 CHINA_TZ = timezone(timedelta(hours=8))
 SITE_URL = "https://myanmarcasino.cloud/"
+TL_SITE_URL = "https://tl8899.live/"
+TL_BLOG_URL = "https://tl8899.live/blog/"
+TL_CONTACT_URL = "https://tl8899.live/contact/"
 
 GAMES = (
     {
@@ -144,59 +147,117 @@ ANGLES = (
     },
 )
 
+RULE_TABLES = {
+    "baccarat": (
+        ("庄", "常见为较低优势选项，但可能采用佣金或免佣规则。"),
+        ("闲", "流程直观，常见赔付为 1:1，仍应查看桌台说明。"),
+        ("和", "显示赔率较高但出现频率较低，不应把高赔率理解为更容易出现。"),
+    ),
+    "dragon-tiger": (
+        ("龙 / 虎", "双方各一张牌，比较牌面大小，A 通常最小、K 最大。"),
+        ("和局", "赔率较高且波动较大，具体结算以当前桌台为准。"),
+        ("节奏", "回合速度快，固定预算和时间限制尤其重要。"),
+    ),
+    "niu-niu": (
+        ("三张成十", "先找三张点数合计为 10 的倍数的牌。"),
+        ("牛数", "剩余两张牌的个位数用于判断牛一至牛牛。"),
+        ("特殊牌型", "五花牛、炸弹等名称和倍数可能因平台而异。"),
+    ),
+    "sic-bo": (
+        ("大 / 小", "先确认三颗骰子的点数范围及围骰例外规则。"),
+        ("点数", "指定总点数的概率与赔率各不相同。"),
+        ("围骰", "显示赔率通常较高，同时伴随更高波动。"),
+    ),
+    "blackjack": (
+        ("要牌 / 停牌", "根据当前点数与庄家明牌作决定，但结果仍不确定。"),
+        ("分牌 / 加倍", "允许条件、投注限制与后续要牌规则因桌台而异。"),
+        ("Blackjack 赔率", "先确认天然二十一点采用 3:2、6:5 或其他赔付。"),
+    ),
+}
+
 
 def parse_day(value: str | None) -> date:
     return date.fromisoformat(value) if value else datetime.now(CHINA_TZ).date()
 
 
-def render_post(day: date, game: dict[str, str], angle: dict[str, str], repository: str) -> str:
+def render_post(
+    day: date,
+    game: dict[str, str],
+    angle: dict[str, str],
+    repository: str,
+    sequence: int,
+) -> str:
     image_url = f"https://raw.githubusercontent.com/{repository}/main/assets/{game['image']}"
     guide_url = f"{SITE_URL}{game['guide']}"
-    title = f"{game['name']}: {angle['title']} ({day.isoformat()})"
-    return f"""<!-- title: {title} -->
+    title = f"腾龙公司：{game['zh']}｜{angle['zh_title']}（第{sequence}篇）"
+    description = (
+        f"{game['zh']}中文指南：{angle['zh_title']}，包含基础规则、桌台检查、新手误区与负责任娱乐提醒。"
+    )
+    table_rows = "\n".join(f"| {label} | {detail} |" for label, detail in RULE_TABLES[game["slug"]])
+    keywords = "、".join(("腾龙公司", "TL8899 LIVE", game["zh"], "真人娱乐", "规则指南", "负责任娱乐"))
+    return f"""<!--
+title: {title}
+description: {description}
+date: {day.isoformat()}
+language: zh-CN
+-->
 
 # {title}
 
-![{game['name']} responsible-play guide]({image_url})
+**{game['name']} Rules & Responsible Play Guide**
 
-**Published:** {day.isoformat()} (Asia/Shanghai)  
-**Topic:** {game['name']} / {game['zh']}
+**发布日期：** {day.isoformat()}（Asia/Shanghai）
+**主题：** {game['zh']} / {game['name']} · 腾龙公司 TL8899 LIVE
 
-## Quick rule guide
+![{title} 真人娱乐规则配图]({image_url})
 
-{game['rules_en']}
+> **负责任娱乐提示：** 本文仅供成年人了解规则与风险，不承诺盈利，不提供保证结果的方法，也不建议追亏或冲动加注。
 
-For the current reference page, see [{game['name']} guide]({guide_url}). Always confirm the exact live table rules before making a decision.
+## 内容摘要
 
-## Today's focus: {angle['title']}
+{description} 即使游戏名称相同，不同平台的赔率、限额和特殊规则也可能不同，参与前应以当前桌台的信息面板为准。
 
-{angle['focus_en']}
+## {game['zh']}玩法重点
 
-### Practical checklist
+{game['rules_zh']}
 
-- Open the table information panel and check payouts, limits and special rules.
-- Decide the entertainment budget and time limit before the first round.
-- Avoid chasing losses, increasing stakes under pressure or treating history as a prediction.
-- Stop when the planned limit is reached.
+| 项目 | 说明 |
+| --- | --- |
+{table_rows}
 
-## 中文说明：{angle['zh_title']}
+详细规则可以继续阅读 [{game['zh']}规则指南]({guide_url})，并在实际桌台重新确认赔付、限额和供应商差异。
 
-**{game['name']}（{game['zh']}）规则提示：** {game['rules_zh']}
+## 今日主题：{angle['zh_title']}
 
 {angle['focus_zh']}
 
-### 实用检查清单
+### 新手检查清单
 
 - 先打开桌台信息，确认赔率、限额及特别规则。
 - 第一局开始前设定娱乐预算与时间上限。
 - 不追损、不因压力提高投注额，也不要把历史结果当成预测。
 - 达到原定限制后立即停止。
 
+## 搜索标签
+
+{keywords}。关键词用于内容分类与搜索发现，本站不声明与其他品牌存在官方关系。
+
+## English summary
+
+**{game['name']} — {angle['title']}**
+
+{game['rules_en']} {angle['focus_en']} Always check the live provider rule panel, set a budget and time limit, and stop when play no longer feels controlled.
+
+## 相关页面
+
+- [TL8899 LIVE 中文文章]({TL_BLOG_URL})
+- [腾龙公司首页]({TL_SITE_URL})
+- [联系方式]({TL_CONTACT_URL})
+- [Myanmar Casino Guide 规则资料]({SITE_URL})
+
 ---
 
-**Responsible notice / 理性娱乐提示：** Adult informational content only. Follow local laws and platform terms. Gambling outcomes are uncertain and this article does not promise profit. / 本文只供成年人了解规则，不承诺盈利；请遵守当地法律及平台条款，并量力而行。
-
-Website: [{SITE_URL}]({SITE_URL})
+**18+ Responsible notice / 理性娱乐提醒：** Gambling outcomes are uncertain. Follow local laws and platform terms, never treat games as income, and stop if play affects sleep, work, health or family. / 游戏结果具有不确定性，请遵守当地法律与平台条款，切勿把游戏当作收入来源；如娱乐影响睡眠、工作、健康或家庭，应立即停止。
 """
 
 
@@ -205,37 +266,67 @@ def generate_posts(output_root: Path, day: date, count: int, repository: str) ->
     posts_dir.mkdir(parents=True, exist_ok=True)
     created: list[Path] = []
     day_offset = day.toordinal()
+    existing = sorted(posts_dir.glob(f"{day.isoformat()}-*.md"))
+    missing = max(0, count - len(existing))
+    slot = len(existing)
 
-    for index in range(count):
-        game = GAMES[index % len(GAMES)]
-        cycle = index // len(GAMES)
-        angle = ANGLES[(day_offset + index * 3 + cycle) % len(ANGLES)]
+    while len(created) < missing:
+        game = GAMES[slot % len(GAMES)]
+        cycle = slot // len(GAMES)
+        angle = ANGLES[(day_offset + slot * 3 + cycle) % len(ANGLES)]
         path = posts_dir / f"{day.isoformat()}-{game['slug']}-{angle['slug']}.md"
+        slot += 1
         if path.exists():
-            print(f"Skipping existing post: {path.as_posix()}")
             continue
         with path.open("w", encoding="utf-8", newline="\n") as file:
-            file.write(render_post(day, game, angle, repository))
+            file.write(render_post(day, game, angle, repository, len(existing) + len(created) + 1))
         created.append(path)
         print(f"Created: {path.as_posix()}")
 
+    if not created:
+        print(f"Complete: {day.isoformat()} already has {len(existing)} post(s).")
     return created
+
+
+def iter_days(start: date, end: date):
+    current = start
+    while current <= end:
+        yield current
+        current += timedelta(days=1)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate idempotent daily responsible-play Markdown posts.")
     parser.add_argument("--count", type=int, default=5, help="Number of posts to create (1-10).")
     parser.add_argument("--date", help="China-local publication date in YYYY-MM-DD format; defaults to today.")
+    parser.add_argument("--start-date", help="First date to backfill in YYYY-MM-DD format.")
+    parser.add_argument("--end-date", help="Last date to backfill in YYYY-MM-DD format.")
     parser.add_argument("--output-root", type=Path, default=Path.cwd(), help="Repository root containing posts/.")
     args = parser.parse_args()
 
     if not 1 <= args.count <= 10:
         parser.error("--count must be between 1 and 10")
 
-    day = parse_day(args.date)
+    if bool(args.start_date) != bool(args.end_date):
+        parser.error("--start-date and --end-date must be used together")
+    if args.date and args.start_date:
+        parser.error("--date cannot be combined with --start-date/--end-date")
+
     repository = os.environ.get("GITHUB_REPOSITORY", "andrewjack00007-pixel/my-content-repo")
-    created = generate_posts(args.output_root.resolve(), day, args.count, repository)
-    print(f"Done: {len(created)} new post(s) for {day.isoformat()}.")
+    output_root = args.output_root.resolve()
+    if args.start_date:
+        start = parse_day(args.start_date)
+        end = parse_day(args.end_date)
+        if start > end:
+            parser.error("--start-date must not be later than --end-date")
+        days = iter_days(start, end)
+    else:
+        days = (parse_day(args.date),)
+
+    total = 0
+    for day in days:
+        total += len(generate_posts(output_root, day, args.count, repository))
+    print(f"Done: {total} new Chinese-first post(s).")
     return 0
 
 

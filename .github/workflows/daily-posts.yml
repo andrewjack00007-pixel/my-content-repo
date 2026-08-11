@@ -2,8 +2,9 @@ name: Daily automatic posts
 
 on:
   schedule:
-    # GitHub cron uses UTC. 01:00 UTC is 09:00 in China (UTC+8).
-    - cron: "0 1 * * *"
+    # Avoid minute 00, when GitHub Actions has its highest scheduled-workflow load.
+    - cron: "17 9 * * *"
+      timezone: "Asia/Shanghai"
   workflow_dispatch:
 
 permissions:
