@@ -1,9 +1,8 @@
-name: Daily automatic posts
+name: Sync Blogger posts
 
 on:
   schedule:
-    # Avoid minute 00, when GitHub Actions has its highest scheduled-workflow load.
-    - cron: "17 9 * * *"
+    - cron: "47 9 * * *"
       timezone: "Asia/Shanghai"
   workflow_dispatch:
 
@@ -15,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,22 +26,24 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Generate five daily posts
-        run: python scripts/generate_daily_posts.py --count 5 --output-root .
+      - name: Sync published Blogger posts
+        run: >-
+          python scripts/sync_blogger_posts.py
+          --blog-url https://myanmarcasinoguide.blogspot.com/
+          --output-dir google
 
-      - name: Commit and push new posts
+      - name: Commit and push Blogger archive
         shell: bash
         run: |
-          git add posts/
+          git add google/
           if git diff --cached --quiet; then
-            echo "No new posts to commit for today."
+            echo "No Blogger changes to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           china_date="$(TZ=Asia/Shanghai date +%F)"
-          git commit -m "publish daily posts ${china_date}"
+          git commit -m "sync Blogger posts ${china_date}"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
-
