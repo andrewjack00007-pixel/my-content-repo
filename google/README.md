@@ -3,7 +3,7 @@
 Automatic Markdown archive of published posts from [Myanmar Casino (https://tl8899.live & https://myanmarcasino.cloud/ / 腾龙公司  腾龙公司 真人娱乐资讯指南)](https://myanmarcasinoguide.blogspot.com/).
 
 - Blogger blog ID: `5807824031985687769`
-- Published posts found: 99
+- Published posts found: 97
 - Canonical source: Blogger
 - Sync behavior: add or update; archived files are not automatically deleted
 
@@ -39,7 +39,6 @@ Automatic Markdown archive of published posts from [Myanmar Casino (https://tl88
 - [腾龙公司 tl8899.live 移动访问安全：账号、验证码与可信入口｜2026-08-05](2026-08-11-tl8899live-2026-08-05-01287306855-8425799891035310711.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-05_01287306855.html)
 - [腾龙公司 tl8899.live 活动条款指南：流水、期限与适用游戏｜2026-08-05](2026-08-11-tl8899live-2026-08-05-02041680330-5443197094577879667.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-05_02041680330.html)
 - [腾龙公司 tl8899.live 新手常见误区：追输、走势与高倍选项｜2026-08-05](2026-08-11-tl8899live-2026-08-05-2320623258211052676.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-05.html)
-- [腾龙公司 tl8899.live 真人百家乐新手指南：先看规则再下注｜2026-08-04](2026-08-11-tl8899live-2026-08-04-01890039267-6548512752802413578.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-04_01890039267.html)
 - [腾龙公司 tl8899.live 移动访问安全：账号、验证码与可信入口｜2026-08-04](2026-08-11-tl8899live-2026-08-04-01518611954-2568934154288869268.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-04_01518611954.html)
 - [腾龙公司 tl8899.live 活动条款指南：流水、期限与适用游戏｜2026-08-04](2026-08-11-tl8899live-2026-08-04-0516651516-5483934728849450281.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-04_0516651516.html)
 - [腾龙公司 tl8899.live 新手常见误区：追输、走势与高倍选项｜2026-08-04](2026-08-11-tl8899live-2026-08-04-3940343631322259249.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-04.html)
@@ -49,7 +48,6 @@ Automatic Markdown archive of published posts from [Myanmar Casino (https://tl88
 - [腾龙公司 tl8899.live 新手常见误区：追输、走势与高倍选项｜2026-08-03](2026-08-11-tl8899live-2026-08-03-3651554691888125435.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-03.html)
 - [腾龙公司 tl8899.live 赔率与RTP说明：理论数据不是单局预测｜2026-08-03](2026-08-11-tl8899live-rtp2026-08-03-7233653046889832477.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-rtp2026-08-03.html)
 - [腾龙公司 tl8899.live 黑杰克规则：软17、分牌与保险提示｜2026-08-03](2026-08-11-tl8899live-172026-08-03-56824675007593310.md) — 2026-08-11 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-172026-08-03.html)
-- [腾龙公司 tl8899.live 黑杰克规则：软17、分牌与保险提示｜2026-08-11](2026-08-10-tl8899live-172026-08-11-6158638349495635535.md) — 2026-08-10 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-172026-08-11.html)
 - [腾龙公司 tl8899.live 轮盘入门：内围、外围与零号差异｜2026-08-11](2026-08-10-tl8899live-2026-08-11-01758441791-4981262280274987414.md) — 2026-08-10 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-11_01758441791.html)
 - [腾龙公司 tl8899.live 骰宝规则：大小、围骰与高赔率风险｜2026-08-11](2026-08-10-tl8899live-2026-08-11-0775022681-4215491443548988253.md) — 2026-08-10 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-11_0775022681.html)
 - [腾龙公司 tl8899.live 成人娱乐预算指南：先设界限再参与｜2026-08-11](2026-08-10-tl8899live-2026-08-11-01108513600-1523745865000353407.md) — 2026-08-10 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live-2026-08-11_01108513600.html)
