@@ -3,12 +3,13 @@
 Automatic Markdown archive of published posts from [Myanmar Casino (https://tl8899.live & https://myanmarcasino.cloud/ / 腾龙公司  腾龙公司 真人娱乐资讯指南)](https://myanmarcasinoguide.blogspot.com/).
 
 - Blogger blog ID: `5807824031985687769`
-- Published posts found: 106
+- Published posts found: 107
 - Canonical source: Blogger
 - Sync behavior: add or update; archived files are not automatically deleted
 
 ## Posts
 
+- [腾龙公司 tl8899.live 成人娱乐记录与停损指南：先看预算再参与](2026-08-22-tl8899live-0661319371-1842335458481279036.md) — 2026-08-22 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live_0661319371.html)
 - [腾龙公司 tl8899.live 成人娱乐预算与暂停指南：先设界限再参与](2026-08-22-tl8899live-0702546950-853365946469602645.md) — 2026-08-22 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live_0702546950.html)
 - [腾龙公司 tl8899.live 成人娱乐三重界限指南：预算、时间与情绪](2026-08-20-tl8899live-0708759380-6895183133184818997.md) — 2026-08-20 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live_0708759380.html)
 - [腾龙公司 tl8899.live 成人娱乐时间与预算指南：先定界限再参与](2026-08-20-tl8899live-01854148523-4534185174497489168.md) — 2026-08-20 · [Blogger](https://myanmarcasinoguide.blogspot.com/2026/08/tl8899live_01854148523.html)
